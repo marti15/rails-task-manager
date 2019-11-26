@@ -1,0 +1,15 @@
+<%= form_for (@task) do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, placeholder: "Enter title here" %>
+  <br>
+  <br>
+  <%= f.label :details %><br>
+  <%= f.text_field :details, placeholder: "Enter details here" %>
+  <br>
+  <br>
+  <% unless f.object.new_record? %>
+  <%= f.check_box :completed %> Completed
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>
